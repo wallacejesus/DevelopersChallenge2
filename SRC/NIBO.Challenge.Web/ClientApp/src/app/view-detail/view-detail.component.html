@@ -1,0 +1,34 @@
+<app-return-alert [alert]="returnAlert" ></app-return-alert>
+<h1>Extrato</h1>
+<div >
+  <table class="table dark">
+    <thead>
+      <tr>
+        <th scope="col" colspan="5">
+          <button class="btn btn-primary" (click)="exportToExcell()"><span class="glyphicon glyphicon-export"></span> Exportar para Excell</button>
+        </th>
+      </tr>
+      <th scope="col">#</th>
+      <th scope="col">Modo de pagamento</th>
+      <th scope="col">Data</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Descrição da transação</th>
+    </thead>
+    <tbody *ngIf="listDetailsTransaction?.length>0">
+      <tr *ngFor="let detail of listDetailsTransaction"  >
+        <td scop="col">{{detail.idDetail}}</td>
+        <td scop="col">{{detail.type}}</td>
+        <td scop="col">{{detail.date}}</td>
+        <td scop="col">R$ {{detail.value}}</td>
+        <td scop="col">{{detail.detail}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="listDetailsTransaction?.length<1">
+      <tr>
+        <td colspan="5" align="center">
+          Nenhuma transação encontrada.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

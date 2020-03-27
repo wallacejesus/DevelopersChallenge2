@@ -1,0 +1,16 @@
+<app-return-alert [alert]="returnAlert" ></app-return-alert>
+<h1>Importar Arquivos OFX</h1>
+<hr />
+<form (ngSubmit)="onUpload()" >
+  <ul>
+    <li>
+      <input type="file"  name="file" class="file" (change)="getInformationFile($event)"/>
+    </li>
+    <li>&nbsp;</li>
+    <li>
+      <button class="btn btn-primary button-send"><span class="glyphicon glyphicon-import"></span> Importar</button>
+    </li>
+  </ul>
+  
+  
+</form>

@@ -1,0 +1,8 @@
+<p>&nbsp;</p>
+<div class="alert {{alert?.type}}" role="alert" *ngIf="alert?.show" >
+  <button type="button" class="close"  data-dismiss="alert" aria-label="Close" (click)="alert.show=false">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4>{{alert?.title}}</h4>
+  <p>{{alert?.message}}</p>
+</div>
